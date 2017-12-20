@@ -2,15 +2,14 @@
 A   Baby   class and methods that use the Baby class.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Dominic Yurkanin.
+"""  # Done 1
 
 
 def main():
     """
     After you have made the Baby class, run this module. If your Baby
     class is correct, the output of the code below should be:
-
         Hello baby McKinley!
         Hello baby Keegan!
         - - - - -
@@ -39,7 +38,7 @@ def main():
 
 
 # ----------------------------------------------------------------------
-# TODO: 2. Implement a class called   Baby   that has a constructor and
+# Done 2
 #   two methods, as described below.  Your finished Baby class should
 #   cause the code above to display the expected output.  Hint: Your
 #   class will need instance variables that you must figure out.
@@ -90,11 +89,27 @@ def main():
 #
 ########################################################################
 
+class Baby(object):
+    def __init__(self, name):
+        self.name = name
+        self.hour = 0
+        print('Hello baby', self.name)
 
+    def feed_baby(self):
+        print('Thank you for feeding baby', self.name)
+        self.hour = 0
 
-
-
-
+    def hour_passes(self):
+        hours_passed = self.hour % 3
+        if hours_passed == 0:
+            print('Baby', self.name, 'is sleeping.')
+            self.hour += 1
+        elif hours_passed == 1:
+            print('Baby', self.name, 'is awake. Time for food.')
+            self.hour += 1
+        elif hours_passed == 2:
+            print('Baby', self.name, 'is CRYING uncontrollably! Feed the '
+                                     'baby!')
 
 # ----------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
